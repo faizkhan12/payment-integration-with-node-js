@@ -1,5 +1,5 @@
 const paystack = (request) => {
-    const my_secret_key = "Bearer sk_test_c8cc009f94163f2234765425b22213dcacf32361"
+    const my_secret_key = "Bearer sk_test_xxxxxx" // Replace yuor api key in place of it
 
     const initialize_payment = (form, mycallback) => {
         const options = {
