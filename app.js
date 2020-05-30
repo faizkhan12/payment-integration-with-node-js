@@ -87,5 +87,5 @@ app.get('/error', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`App is up running on port ${port}`)
+    console.log(`App up running on port ${port}`)
 });
