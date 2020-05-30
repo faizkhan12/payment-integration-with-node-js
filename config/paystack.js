@@ -1,7 +1,7 @@
 const paystack = (request) => {
-    const my_secret_key = "Bearer sk_test_xxxxxx" // Replace yuor api key in place of it
+    const my_secret_key = "Bearer sk_test_c8cc009f94163f2234765425b22213dcacf32361"
 
-    const initialize_payment = (form, mycallback) => {
+    const initializePayment = (form, mycallback) => {
         const options = {
             url: 'https://api.paystack.co/transaction/initialize',
             headers: {
@@ -14,11 +14,10 @@ const paystack = (request) => {
         const callback = (error, response, body) => {
             return mycallback(error, body)
         }
-
         request.post(options, callback)
     }
 
-    const verifypayment = (ref, mycallback) => {
+    const verifyPayment = (ref, mycallback) => {
         const options = {
             url: 'https://api.paystack.co/transaction/verify/' + encodeURIComponent(ref),
             headers: {
@@ -28,12 +27,12 @@ const paystack = (request) => {
             }
         }
         const callback = (error, response, body) => {
-            return mycallback(error, body);
+            return mycallback(error, body)
         }
-        request(options, callback);
-
+        request(options, callback)
     }
-    return { initialize_payment, verifypayment }
+
+    return { initializePayment, verifyPayment };
 }
 
-module.exports = paystack
+module.exports = paystack;
